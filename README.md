@@ -42,4 +42,4 @@ Usage
 
 Example
 -------
-An example of how to test/use PetroAPI is available in **example.py** located [here](https://tracker.petro-logistics.com:8888/root/petro-api-python/tree/master)
+An example of how to test/use PetroAPI is available in **example.py** located [here](https://git.petro-logistics.com/api-examples/petro-api-python/tree/master)
