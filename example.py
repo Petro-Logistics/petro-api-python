@@ -1,4 +1,5 @@
 from plapi.client import PetroAPI
+import pandas as pd
 
 apiclient = PetroAPI(
             api_url="https://secure.petro-logistics.com/api/v2/aggregatemovementsdata",
@@ -10,4 +11,9 @@ apiclient = PetroAPI(
 
 print("Executing PetroAPI Query")
 result = apiclient.execute("Angola_Test_Data")
-print(result)
+
+print(result["envelope"]["header"])
+
+df = pd.DataFrame.from_dict(result["envelope"]["movements"])
+
+print(df)
