@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import os
 from setuptools import find_packages, setup
 
@@ -14,11 +16,12 @@ setup(
     include_package_data=True,
     install_requires=[
         'requests>=2.13.0',
+        'pandas',
     ],
     license='BSD License',  # example license
     description='Petro-Logistics API in Python',
     long_description=README,
-    url='https://tracker.petro-logistics.com:8888/root/petro-api-python/',
+    url='https://github.com/Petro-Logistics/petro-api-python-example',
     author='tshabs',
     author_email='yourname@example.com',
     classifiers=[

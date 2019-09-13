@@ -6,17 +6,17 @@ __author__ = "Petro-Logistics <info@petro-logistics.com>"
 __version__ = "0.1.0"
 
 
-class PetroAPIError(Exception):
+class PLAPIClientError(Exception):
     def __init__(self, msg):
         self.msg = msg
     def __str__(self):
         return repr(self.msg)
 
 
-class PetroAPI:
+class PLAPIClient:
     def __init__(self, api_url, api_key, api_hash, http_user, http_pass):
         """ __init__()
-            Instantiates an instance of PetroAPI. Takes parameters for authentication and such (see below).
+            Instantiates an instance of PLAPIClient. Takes parameters for authentication and such (see below).
             Parameters:
                 api_endpoint: Which API to use (eg. https://secure.petro-logistics.com/api/v2/movementsdata).
                 api_key: Your API key.
