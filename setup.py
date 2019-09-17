@@ -16,7 +16,6 @@ setup(
     include_package_data=True,
     install_requires=[
         'requests>=2.13.0',
-        'pandas',
     ],
     license='BSD License',  # example license
     description='Petro-Logistics API in Python',
