@@ -11,13 +11,21 @@ This module is a Python API client (with an example script) for retrieving data 
 - Python3-pip
 
 ## Install
-### Installing dependencies
+### install with pip
 ```
 sudo apt-get install python3 python3-pip
+pip install git+https://github.com/Petro-Logistics/petro-api-python
+```
+
+
+### Install manually
+```
+sudo apt-get install python3 git
 git clone https://github.com/Petro-Logistics/petro-api-python-example.git
 cd ./petro-api-python
 sudo python3 setup.py install
 ```
+
 
 ### Running the example
 ```python
