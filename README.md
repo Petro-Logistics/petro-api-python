@@ -2,11 +2,11 @@
 ---
 
 ## Python API CLient
-This project is a Python API client (with an example script) for retrieving data with with the [Petro-Logistics API](https://secure.petro-logistics.com/client/api).
+This module is a Python API client (with an example script) for retrieving data with with the [Petro-Logistics API](https://secure.petro-logistics.com/client/api).
 
 
 ## Dependencies
-### PLAPIClient is an Python project, so you need to install:
+### PLAPIClient is an Python module, so you need to install:
 - Python3
 - Python3-pip
 
