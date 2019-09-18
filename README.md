@@ -2,7 +2,7 @@
 ---
 
 ## Python API CLient
-This module is a Python API client (with an example) for retrieving data with with the [Petro-Logistics API](https://secure.petro-logistics.com/client/api).
+This module is a Python API client (with examples) for retrieving data with with the [Petro-Logistics API](https://secure.petro-logistics.com/client/api).
 
 
 ## Dependencies
@@ -65,5 +65,5 @@ This module is a Python API client (with an example) for retrieving data with wi
 
 
 ## Examples
-1. An example of how to test/use PLAPIClient is available in **test_example.py** located [here](test_example.py)
-2. An other example of how to test/use PLAPIClient with "Pandas" Library is available in **test_example_pandas.py** located [here](test_example_pandas.py)
+1. An example of how to test/use PLAPIClient is available in **test_example.py** located [here](examples/test_example.py)
+2. An other example of how to test/use PLAPIClient with "Pandas" Library is available in **test_example_pandas.py** located [here](examples/test_example_pandas.py)
