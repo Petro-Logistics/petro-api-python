@@ -1,4 +1,5 @@
 from plapi.client import PLAPIClient
+import pandas as pd
 
 plapiclient = PLAPIClient(
             api_url="https://secure.petro-logistics.com/api/v2/aggregatemovementsdata",
@@ -12,3 +13,7 @@ print("Executing PLAPIClient Query")
 result = plapiclient.execute("Angola_Test_Data")
 
 print(result["envelope"]["header"])
+
+df = pd.DataFrame.from_dict(result["envelope"]["movements"])
+
+print(df)
