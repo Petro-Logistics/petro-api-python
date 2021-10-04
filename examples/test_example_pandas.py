@@ -3,6 +3,7 @@
 # This work is licensed under the terms of the MIT license.  
 # For a copy, see <https://opensource.org/licenses/MIT>.
 
+# To run this example you need to install the 'pandas' package (Check the corresponding instalaltion procedure)
 from plapi.client import PLAPIClient
 import pandas as pd
 
@@ -34,6 +35,7 @@ df = pd.DataFrame.from_dict(result["envelope"]["movements"])
 # df.to_csv(r"today.csv")
 
 # Export pandas dataframe object to a "XLSX" file: df.to_excel(r"filename.xlsx")
+# To run this example you need to install the 'openpyxl' package (Check the corresponding instalaltion procedure)
 # Uncomment next line to test XLSX export
 # df.to_excel(r"today.xlsx")
 
