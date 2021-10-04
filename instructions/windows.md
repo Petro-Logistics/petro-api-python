@@ -11,11 +11,11 @@
    - Execute downloaded installation file
    - Check `Install launcher for all users (recomended)` and `Add Python X.X to PATH` and after that click `Install Now` (In yellow on the image below)
 
-     ![Python Setup](assets/python-setup.png)
+     ![Python Setup](assets/python-setup.jpg)
 
    - After succesfully installed, click on `Disable path length limit` (In yellow on the image below)
 
-     ![Python Setup](assets/python-setup-completed.png)
+     ![Python Setup](assets/python-setup-completed.jpg)
 
 2. Download and install latest version of [`Git`](https://git-scm.com/download/win) for Windows
 3. Open a command prompt in Windows
