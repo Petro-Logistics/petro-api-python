@@ -5,6 +5,7 @@
 ## Index
 - [Install](#install)
 - [Use](#use)
+- [Tips](#tips)
 
 ## Install
 1. Download and install latest version of [`Python 3`](https://www.python.org/downloads/) for Windows (`PIP 3` is already included in this installation)
@@ -19,11 +20,15 @@
 
 2. Download and install latest version of [`Git`](https://git-scm.com/download/win) for Windows
 3. Open a command prompt in Windows
-3. Install `Pandas`
+3. Install `Pandas` (Only if you want to use the Pandas example)
     ```cmd
     pip install pandas
     ```
-4. Install `Python API CLient of Petro-Logisitics`
+4. Install `OpenPyXL` (Only if you want to export data to excel)
+    ```cmd
+    pip install openpyxl
+    ```
+5. Install `Python API CLient of Petro-Logisitics`
     - With PIP 3
       ```cmd
       pip install git+https://github.com/Petro-Logistics/petro-api-python
@@ -79,3 +84,40 @@
     ```bash
     python your_file_name.py
     ```
+
+## Tips
+- If you have `SSL` errors, please check your network communication permissions (firewall, others)
+- To run more than one query, you can use 1 of the following proposals:
+  1. Creating 1 copy of our example file for each desired query (By filling in the corresponding parameters on each file)
+  2. By repeating a part of the code in the same file, like this:
+     ```python
+     ...
+     # Execute PLAPIClient object with saved query "Query_1"
+     result = plapiclient.execute("query_1")
+     
+     print(result["envelope"]["header"])
+     
+     # Initialize pandas object with API result
+     df = pd.DataFrame.from_dict(result["envelope"]["movements"])
+     
+     # Export pandas dataframe object to a "XLSX" file: df.to_excel(r"filename.xlsx")
+     # Uncomment next line to test XLSX export
+     df.to_excel(r"query_1.xlsx")
+
+     print(df)
+
+     # Execute PLAPIClient object with saved query "Query_2"
+     result = plapiclient.execute("query_2")
+     
+     print(result["envelope"]["header"])
+     
+     # Initialize pandas object with API result
+     df = pd.DataFrame.from_dict(result["envelope"]["movements"])
+     
+     # Export pandas dataframe object to a "XLSX" file: df.to_excel(r"filename.xlsx")
+     # Uncomment next line to test XLSX export
+     df.to_excel(r"query_2.xlsx")
+
+     print(df)
+     ...
+     ```
