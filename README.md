@@ -1,70 +1,44 @@
 [![License](https://img.shields.io/github/license/petro-logistics/petro-api-python.svg)](LICENSE)
-# README
----
 
-## Python API CLient
-This module is a Python API client (with examples) for retrieving data with with the [Petro-Logistics API](https://secure.petro-logistics.com/client/api).
+# Python API CLient of Petro-Logistics
+This module is a Python API client (with examples) for retrieving data with the [Petro-Logistics API](https://secure.petro-logistics.com/client/api).
 
+## Setup
 
-## Dependencies
-- Ubuntu
-    ```
-    sudo apt-get install python3 python3-pip git
-    ```
-- RHES & CentOS
-    ```
-    yum install python3 python3-pip git
-    ```
-- Windows
-    - Download and install [Python 3](https://www.python.org/downloads/windows/) ("Python 3" & "pip" included in version 3.4 or greater).
-    - Download and install [git](https://git-scm.com/download/win).
-
-## Install
-- With pip
-    ```
-    pip install git+https://github.com/Petro-Logistics/petro-api-python
-    ```
-- Manually
-    ```
-    git clone https://github.com/Petro-Logistics/petro-api-python.git
-    cd petro-api-python
-    python setup.py install
-    ```
-
-
-## Parameters
-- **PLAPIClient** is initialized with 5 parameters:
-    - api_url
-    - api_user
-    - api_password
-    - api_key
-    - api_hash
-
-
-- **PLAPIClient** is called with 1 parameter:
-    - query_name
-
-
-## Usage
-- ### Initialization
-    ```python
-    plapiclient = PLAPIClient(
-        api_url="https://secure.petro-logistics.com/api/v2/requested_report_type",
-        api_key="your_api_key",
-        api_hash="your_api_hash",
-        http_user="your_http_user",
-        http_pass="your_http_password"
-    )
-    ```
-
-
-- ### Execution
-    ```python
-    result = plapiclient.execute("query_name")
-
-    ```
-
+To install the module, follow the instructions based on your operating system:
+- [Windows](instructions/windows.md)
+- [Ubuntu](instructions/ubuntu.md)
+- [RHES & CentOS](instructions/rhes_centos.md)
 
 ## Examples
-1. An example of how to test/use PLAPIClient is available in **test_example.py** located [here](examples/test_example.py)
-2. An other example of how to test/use PLAPIClient with "Pandas" Library is available in **test_example_pandas.py** located [here](examples/test_example_pandas.py)
+To test and have a base to start using our API with Python scripts, you can use the following examples:
+- [Simple Example](https://github.com/Petro-Logistics/petro-api-python/blob/master/examples/test_example.py)
+- [Pandas Example](https://github.com/Petro-Logistics/petro-api-python/blob/master/examples/test_example_pandas.py)
+
+## Troubleshooting
+### Unauthorized HTTP error 401
+- _**Message:**_
+  ```
+  requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://secure.petro-logistics.com/api/v2/aggregatemovementsdata.php
+  ```
+- _**Solution:**_ Update firewall settings to trust the PL domain
+
+### SSLError: certificate verify failed
+- _**Message:**_
+  ```
+  SSLError: HTTPSConnectionPool(host=‘secure.petro-logistics.com’, port=443): Max retries exceeded with url: /api/v2/aggregatemovementsdata.php (Caused by SSLError(SSLError(“bad handshake: Error([(‘SSL routines’, ‘tls_process_server_certificate’, ‘certificate verify failed’)])“)))
+  ```
+- _**Additional infos:**_ The problem seems to be the same as above. Possible reasons:
+  - You are using a self signed certificate for the resource you are accessing.
+  - Your company intercepts and inspects HTTPS traffic; hence adding its own certificates at the top of the certificate chain.
+- _**Solution:**_ Contact company’s IT team with above error and possible reasons.
+
+### Certificate revocation error
+- _**Message:**_
+  ```
+  fatal: unable to access ’https://github.com/Petro-Logistics/petro-api-python/’: schannel: next InitializeSecurityContext failed: Unknown error (0x80092012) - The revocation function was unable to check revocation for the certificate.
+  ```
+- _**Additional infos:**_ The problem seems to be in the Windows git configuration, or in the settings of the firewall. Possible solutions:
+  - https://github.com/desktop/desktop/issues/2187#issuecomment-313309981
+  - https://stackoverflow.com/questions/45556189/git-the-revocation-function-was-unable-to-check-revocation-for-the-certificate
+- _**Solution:**_ Contact company’s IT team with above error and possible reasons.
