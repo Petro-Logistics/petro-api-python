@@ -1,4 +1,4 @@
-# Copyright (c) 2019 Petro-Logistics S.A., All rights reserved.
+# Copyright (c) 2021 Petro-Logistics S.A., All rights reserved.
 # 
 # This work is licensed under the terms of the MIT license.  
 # For a copy, see <https://opensource.org/licenses/MIT>.
@@ -25,8 +25,16 @@ print(result["envelope"]["header"])
 # Initialize pandas object with API result
 df = pd.DataFrame.from_dict(result["envelope"]["movements"])
 
-# Export pandas object to a "JSON" file: df.to_json(r"path_to_save_your_file/filename.json")
+# Export pandas dataframe object to a "JSON" file: df.to_json(r"filename.json")
 # Uncomment next line to test JSON export
 # df.to_json(r"today.json")
+
+# Export pandas dataframe object to a "CSV" file: df.to_csv(r"filename.csv")
+# Uncomment next line to test CSV export
+# df.to_csv(r"today.csv")
+
+# Export pandas dataframe object to a "XLSX" file: df.to_excel(r"filename.xlsx")
+# Uncomment next line to test XLSX export
+# df.to_excel(r"today.xlsx")
 
 print(df)
