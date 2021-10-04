@@ -5,7 +5,6 @@
 ## Index
 - [Install](#install)
 - [Use](#use)
-- [Tips](#tips)
 
 ## Install
 1. Open a terminal in RHES/CentOS and and follow the steps below
@@ -76,40 +75,3 @@
     ```bash
     python3 your_file_name.py
     ```
-
-## Tips
-- If you have `SSL` errors, please check your network communication permissions (firewall, others)
-- To run more than one query, you can use 1 of the following proposals:
-  1. Creating 1 copy of our example file for each desired query (By filling in the corresponding parameters on each file)
-  2. By repeating a part of the code in the same file, like this:
-     ```python
-     ...
-     # Execute PLAPIClient object with saved query "Query_1"
-     result = plapiclient.execute("query_1")
-     
-     print(result["envelope"]["header"])
-     
-     # Initialize pandas object with API result
-     df = pd.DataFrame.from_dict(result["envelope"]["movements"])
-     
-     # Export pandas dataframe object to a "XLSX" file: df.to_excel(r"filename.xlsx")
-     # Uncomment next line to test XLSX export
-     df.to_excel(r"query_1.xlsx")
-
-     print(df)
-
-     # Execute PLAPIClient object with saved query "Query_2"
-     result = plapiclient.execute("query_2")
-     
-     print(result["envelope"]["header"])
-     
-     # Initialize pandas object with API result
-     df = pd.DataFrame.from_dict(result["envelope"]["movements"])
-     
-     # Export pandas dataframe object to a "XLSX" file: df.to_excel(r"filename.xlsx")
-     # Uncomment next line to test XLSX export
-     df.to_excel(r"query_2.xlsx")
-
-     print(df)
-     ...
-     ```
