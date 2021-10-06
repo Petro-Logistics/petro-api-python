@@ -21,7 +21,7 @@ To test and have a base to start using our API with Python scripts, you can use 
   ```
   requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://secure.petro-logistics.com/api/v2/aggregatemovementsdata.php
   ```
-- _**Solution:**_ Update firewall settings to trust the PL domain
+- _**Solution:**_ Update firewall settings to trust our domain: `petro-logistics.com`
 
 ### SSLError: certificate verify failed
 - _**Message:**_
