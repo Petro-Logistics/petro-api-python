@@ -1,6 +1,6 @@
 [![License](https://img.shields.io/github/license/petro-logistics/petro-api-python.svg)](LICENSE)
 
-# Python API CLient of Petro-Logistics
+# Python API Client of Petro-Logistics
 This module is a Python API client (with examples) for retrieving data with the [Petro-Logistics API](https://secure.petro-logistics.com/client/api).
 
 ## Setup
