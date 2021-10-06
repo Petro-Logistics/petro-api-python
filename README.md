@@ -1,6 +1,6 @@
 [![License](https://img.shields.io/github/license/petro-logistics/petro-api-python.svg)](LICENSE)
 
-# Python API CLient of Petro-Logistics
+# Python API Client of Petro-Logistics
 This module is a Python API client (with examples) for retrieving data with the [Petro-Logistics API](https://secure.petro-logistics.com/client/api).
 
 ## Setup
@@ -21,14 +21,15 @@ To test and have a base to start using our API with Python scripts, you can use 
   ```
   requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://secure.petro-logistics.com/api/v2/aggregatemovementsdata.php
   ```
-- _**Solution:**_ Update firewall settings to trust the PL domain
+- _**Additional infos:**_ It is possible that some security settings prevent access to our services.
+- _**Solution:**_ Update firewall settings to trust our domain: `petro-logistics.com`.
 
 ### SSLError: certificate verify failed
 - _**Message:**_
   ```
   SSLError: HTTPSConnectionPool(host=‘secure.petro-logistics.com’, port=443): Max retries exceeded with url: /api/v2/aggregatemovementsdata.php (Caused by SSLError(SSLError(“bad handshake: Error([(‘SSL routines’, ‘tls_process_server_certificate’, ‘certificate verify failed’)])“)))
   ```
-- _**Additional infos:**_ The problem seems to be the same as above. Possible reasons:
+- _**Additional infos:**_ The problem seems to be the same as above, it is possible that some security settings prevent access to our services. Possible reasons:
   - You are using a self signed certificate for the resource you are accessing.
   - Your company intercepts and inspects HTTPS traffic; hence adding its own certificates at the top of the certificate chain.
 - _**Solution:**_ Contact company’s IT team with above error and possible reasons.
