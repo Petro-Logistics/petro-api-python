@@ -1,1 +1,4 @@
 *.pyc
+/build
+/dist
+/petro_api_python.egg-info

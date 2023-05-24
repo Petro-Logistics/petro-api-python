@@ -60,7 +60,7 @@
     - Initialized with 5 parameters:
       ```python
       plapiclient = PLAPIClient(
-        api_url="https://secure.petro-logistics.com/api/v2/requested_report_type",
+        api_url="https://secure.petro-logistics.com/api/v3/requested_report_type",
         api_key="your_api_key",
         api_hash="your_api_hash",
         http_user="your_http_user",

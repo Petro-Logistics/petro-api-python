@@ -19,7 +19,7 @@ To test and have a base to start using our API with Python scripts, you can use 
 ### Unauthorized HTTP error 401
 - _**Message:**_
   ```
-  requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://secure.petro-logistics.com/api/v2/aggregatemovementsdata.php
+  requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url:ï¿½https://secure.petro-logistics.com/api/v3/aggregatemovementsdata.php
   ```
 - _**Additional infos:**_ It is possible that some security settings prevent access to our services.
 - _**Solution:**_ Update firewall settings to trust our domain: `petro-logistics.com`.
@@ -27,19 +27,19 @@ To test and have a base to start using our API with Python scripts, you can use 
 ### SSLError: certificate verify failed
 - _**Message:**_
   ```
-  SSLError: HTTPSConnectionPool(host=‘secure.petro-logistics.com’, port=443): Max retries exceeded with url: /api/v2/aggregatemovementsdata.php (Caused by SSLError(SSLError(“bad handshake: Error([(‘SSL routines’, ‘tls_process_server_certificate’, ‘certificate verify failed’)])“)))
+  SSLError: HTTPSConnectionPool(host=ï¿½secure.petro-logistics.comï¿½, port=443): Max retries exceeded with url: /api/v3/aggregatemovementsdata.php (Caused by SSLError(SSLError(ï¿½bad handshake: Error([(ï¿½SSL routinesï¿½, ï¿½tls_process_server_certificateï¿½, ï¿½certificate verify failedï¿½)])ï¿½)))
   ```
 - _**Additional infos:**_ The problem seems to be the same as above, it is possible that some security settings prevent access to our services. Possible reasons:
   - You are using a self signed certificate for the resource you are accessing.
   - Your company intercepts and inspects HTTPS traffic; hence adding its own certificates at the top of the certificate chain.
-- _**Solution:**_ Contact company’s IT team with above error and possible reasons.
+- _**Solution:**_ Contact companyï¿½s IT team with above error and possible reasons.
 
 ### Certificate revocation error
 - _**Message:**_
   ```
-  fatal: unable to access ’https://github.com/Petro-Logistics/petro-api-python/’: schannel: next InitializeSecurityContext failed: Unknown error (0x80092012) - The revocation function was unable to check revocation for the certificate.
+  fatal: unable to access ï¿½https://github.com/Petro-Logistics/petro-api-python/ï¿½:ï¿½schannel: next InitializeSecurityContext failed: Unknown error (0x80092012) - The revocation function was unable to check revocation for the certificate.
   ```
 - _**Additional infos:**_ The problem seems to be in the Windows git configuration, or in the settings of the firewall. Possible solutions:
   - https://github.com/desktop/desktop/issues/2187#issuecomment-313309981
   - https://stackoverflow.com/questions/45556189/git-the-revocation-function-was-unable-to-check-revocation-for-the-certificate
-- _**Solution:**_ Contact company’s IT team with above error and possible reasons.
+- _**Solution:**_ Contact companyï¿½s IT team with above error and possible reasons.
