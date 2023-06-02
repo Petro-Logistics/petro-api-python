@@ -7,7 +7,14 @@
 from plapi.client import PLAPIClient
 import pandas as pd
 
-# Initialize PLAPIClient object with "test user" credentials and "aggregatemovementsdata" report type
+# Initialize object "PLAPIClient" to be executed.
+#
+# Provide your credentials ("api_key", "api_hash", "http_user", "http_pass").
+# !!! If you don't find your credentials, please contact our support!
+#
+# Provide your "desired_report_type"
+# !!! If you don't know what the **desired_report_type**, please contact our support
+# !!! e.g. of "desired_report_type": "/aggregatemovementsdata", "/movementsdata", etc.
 plapiclient = PLAPIClient(
             api_url="https://secure.petro-logistics.com/api/v3/aggregatemovementsdata",
             api_key="37rspm6j39td23nh0o2v0h78",
@@ -18,7 +25,10 @@ plapiclient = PLAPIClient(
 
 print("Executing PLAPIClient Query")
 
-# Execute PLAPIClient object with saved query "Angola_Test_Data"
+# Execute function "execute" to request and get the results.
+#
+# provide the "query_name".
+# !!! If you don't find your **query_name**, please contact our support!
 result = plapiclient.execute("Angola_Test_Data")
 
 print(result["envelope"]["header"])
