@@ -3,8 +3,7 @@
 # RHES & CentOS Instructions
 
 ## Index
-- [Install](#install)
-- [Use](#use)
+[[_TOC_]]
 
 ## Install
 1. Open a terminal in RHES/CentOS and and follow the steps below
@@ -57,21 +56,33 @@
     cp test_example_pandas.py your_file_name.py
     ```
 5. Edit `your_file_name.py` and replace **`PLAPIClient`** example parameters with your required personal parameters
-    - Initialized with 5 parameters:
+    - Initialized with 5 parameters: [^1] [^2]
       ```python
       plapiclient = PLAPIClient(
-        api_url="https://secure.petro-logistics.com/api/v2/requested_report_type",
+        api_url="https://secure.petro-logistics.com/api/v3/desired_report_type",
         api_key="your_api_key",
         api_hash="your_api_hash",
         http_user="your_http_user",
         http_pass="your_http_password"
       )
       ```
-    - Called with 1 parameter:
+    - Called with 1 parameter: [^3]
       ```python
-      result = plapiclient.execute("your_query_name")
+      result = plapiclient.execute("query_name")
       ```
 6. Execute your copied file
     ```bash
     python3 your_file_name.py
     ```
+
+---
+---
+[^1]:
+    > - If you don't find your credentials, please contact our support!
+
+[^2]:
+    > - If you don't know what the **desired_report_type**, please contact our support
+    > - e.g. of **desired_report_type**: ".../aggregatemovementsdata", ".../movementsdata", etc.
+
+[^3]:
+    > - If you don't find your **query_name**, please contact our support!

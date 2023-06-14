@@ -1,4 +1,4 @@
-# Copyright (c) 2021 Petro-Logistics S.A., All rights reserved.
+# Copyright (c) 2023 Petro-Logistics S.A., All rights reserved.
 # 
 # This work is licensed under the terms of the MIT license.  
 # For a copy, see <https://opensource.org/licenses/MIT>.
@@ -23,7 +23,7 @@ class PLAPIClient:
         """ __init__()
             Instantiates an instance of PLAPIClient. Takes parameters for authentication and such (see below).
             Parameters:
-                api_endpoint: Which API to use (eg. https://secure.petro-logistics.com/api/v2/movementsdata).
+                api_endpoint: Which API to use (eg. https://secure.petro-logistics.com/api/v3/movementsdata).
                 api_key: Your API key.
                 api_hash: Your API hash.
                 http_user: Your HTTP user.

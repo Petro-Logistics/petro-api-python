@@ -1,4 +1,4 @@
-# Copyright (c) 2021 Petro-Logistics S.A., All rights reserved.
+# Copyright (c) 2023 Petro-Logistics S.A., All rights reserved.
 # 
 # This work is licensed under the terms of the MIT license.  
 # For a copy, see <https://opensource.org/licenses/MIT>.
@@ -7,18 +7,28 @@
 from plapi.client import PLAPIClient
 import pandas as pd
 
-# Initialize PLAPIClient object with "test user" credentials and "aggregatemovementsdata" report type
+# Initialize object "PLAPIClient" to be executed.
+#
+# Provide your credentials ("api_key", "api_hash", "http_user", "http_pass").
+# !!! If you don't find your credentials, please contact our support!
+#
+# Provide your "desired_report_type"
+# !!! If you don't know what the **desired_report_type**, please contact our support
+# !!! e.g. of "desired_report_type": "/aggregatemovementsdata", "/movementsdata", etc.
 plapiclient = PLAPIClient(
-            api_url="https://secure.petro-logistics.com/api/v2/aggregatemovementsdata",
+            api_url="https://secure.petro-logistics.com/api/v3/aggregatemovementsdata",
             api_key="37rspm6j39td23nh0o2v0h78",
-            api_hash="P0iwW39qaMvTjFRdcmsiKmD9OxGEquHNXapwbSQr8gbuV2ssqjbt0Vy7Yelyi4C1",
-            http_user="testuser_http_CuH68Omfx17R",
-            http_pass="X9PV5EmJPr88lEyjD2I2IE26b9ElQCX0"
+            api_hash="d1Npusz7BrVDauza7b7v5swgV20uiXQwiCG6nxiPseWRda6mTfJBeByKZsvp5sNX",
+            http_user="testuser_http_kRQNk5878ezA",
+            http_pass="F268DBvvPCBV83eT1vIeTpBGrJD604K2"
         )
 
 print("Executing PLAPIClient Query")
 
-# Execute PLAPIClient object with saved query "Angola_Test_Data"
+# Execute function "execute" to request and get the results.
+#
+# provide the "query_name".
+# !!! If you don't find your **query_name**, please contact our support!
 result = plapiclient.execute("Angola_Test_Data")
 
 print(result["envelope"]["header"])
@@ -58,7 +68,7 @@ print(df)
 #   3. By repeating corresponding code in this same file to execute other queries for another api_url, like this:
 #
 #      plapiclient = PLAPIClient(
-#                  api_url="https://secure.petro-logistics.com/api/v2/other_desired_api",
+#                  api_url="https://secure.petro-logistics.com/api/v3/other_desired_api",
 #                  api_key="37rspm6j39td23nh0o2v0h78",
 #                  api_hash="P0iwW39qaMvTjFRdcmsiKmD9OxGEquHNXapwbSQr8gbuV2ssqjbt0Vy7Yelyi4C1",
 #                  http_user="testuser_http_CuH68Omfx17R",
