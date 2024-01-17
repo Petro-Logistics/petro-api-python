@@ -21,7 +21,7 @@ To test and have a base to start using our API with Python scripts, you can use 
 ### Unauthorized HTTP error 401
 - _**Message:**_
   ```
-  requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://secure.petro-logistics.com/api/v3/aggregatemovementsdata.php
+  requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://secure.petro-logistics.com/api/v4/aggregatemovementsdata.php
   ```
 - _**Additional infos:**_ It is possible that some security settings prevent access to our services.
 - _**Solution:**_ Update firewall settings to trust our domain: `petro-logistics.com`.
@@ -29,7 +29,7 @@ To test and have a base to start using our API with Python scripts, you can use 
 ### SSLError: certificate verify failed
 - _**Message:**_
   ```
-  SSLError: HTTPSConnectionPool(host='secure.petro-logistics.com', port=443): Max retries exceeded with url: /api/v3/aggregatemovementsdata.php (Caused by SSLError(SSLError("bad handshake: Error([('SSL routines', 'tls_process_server_certificate', 'certificate verify failed')])")))
+  SSLError: HTTPSConnectionPool(host='secure.petro-logistics.com', port=443): Max retries exceeded with url: /api/v4/aggregatemovementsdata.php (Caused by SSLError(SSLError("bad handshake: Error([('SSL routines', 'tls_process_server_certificate', 'certificate verify failed')])")))
   ```
 - _**Additional infos:**_ The problem seems to be the same as above, it is possible that some security settings prevent access to our services. Possible reasons:
   - You are using a self signed certificate for the resource you are accessing.

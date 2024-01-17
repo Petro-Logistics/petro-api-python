@@ -1,4 +1,4 @@
-# Copyright (c) 2023 Petro-Logistics S.A., All rights reserved.
+# Copyright (c) 2024 Petro-Logistics S.A., All rights reserved.
 # 
 # This work is licensed under the terms of the MIT license.  
 # For a copy, see <https://opensource.org/licenses/MIT>.
@@ -14,7 +14,7 @@ from plapi.client import PLAPIClient
 # !!! If you don't know what the **desired_report_type**, please contact our support
 # !!! e.g. of "desired_report_type": "/aggregatemovementsdata", "/movementsdata", etc.
 plapiclient = PLAPIClient(
-            api_url="https://secure.petro-logistics.com/api/v3/aggregatemovementsdata",
+            api_url="https://secure.petro-logistics.com/api/v4/aggregatemovementsdata",
             api_key="37rspm6j39td23nh0o2v0h78",
             api_hash="d1Npusz7BrVDauza7b7v5swgV20uiXQwiCG6nxiPseWRda6mTfJBeByKZsvp5sNX",
             http_user="testuser_http_kRQNk5878ezA",
@@ -43,7 +43,7 @@ print(result["envelope"]["header"])
 #   3. By repeating corresponding code in this same file to execute other queries for another api_url, like this:
 #
 #      plapiclient = PLAPIClient(
-#                  api_url="https://secure.petro-logistics.com/api/v3/other_desired_api",
+#                  api_url="https://secure.petro-logistics.com/api/v4/other_desired_api",
 #                  api_key="37rspm6j39td23nh0o2v0h78",
 #                  api_hash="P0iwW39qaMvTjFRdcmsiKmD9OxGEquHNXapwbSQr8gbuV2ssqjbt0Vy7Yelyi4C1",
 #                  http_user="testuser_http_CuH68Omfx17R",
